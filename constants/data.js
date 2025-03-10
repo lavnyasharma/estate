@@ -76,28 +76,16 @@ export const settings = [
     title: "Payments",
     icon: icons.wallet,
   },
-  {
-    title: "Profile",
-    icon: icons.person,
-  },
-  {
-    title: "Notifications",
-    icon: icons.bell,
-  },
+
+
   {
     title: "Listed Properties",
     icon: icons.Terms,
     onPress: `/listed/page`,
   },
 
-  {
-    title: "Language",
-    icon: icons.language,
-  },
-  {
-    title: "Help Center",
-    icon: icons.info,
-  },
+
+
   {
     title: "Terms & Condition",
     icon: icons.Terms,

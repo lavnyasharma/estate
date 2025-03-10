@@ -37,7 +37,7 @@ export const FeaturedCard = ({ item, onPress }) => {
           <Text className="text-xl font-rubik-extrabold text-white">
             ${item.price}
           </Text>
-          <Image source={icons.heart} className="size-5" />
+         
         </View>
       </View>
     </TouchableOpacity>

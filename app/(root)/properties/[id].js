@@ -235,92 +235,95 @@ const Property = () => {
         </View>
       </View>
 
-      {/* Form Modal */}
-      <Modal
-        transparent={true}
-        visible={formModalVisible}
-        animationType="fade"
-        onRequestClose={() => setFormModalVisible(false)}
+{/* Form Modal */}
+<Modal
+  transparent={true}
+  visible={formModalVisible}
+  animationType="fade"
+  onRequestClose={() => setFormModalVisible(false)}
+>
+  <View className="flex justify-center items-center absolute top-0 left-0 right-0 bottom-0 bg-[rgba(0,0,0,0.5)] bg-opacity-50">
+    <View className="bg-white p-8 rounded-xl w-80 shadow-lg">
+      <Text className="text-2xl font-rubik-bold text-center text-gray-700 mb-4">
+        Enter Your Details
+      </Text>
+
+      {/* Name Input */}
+      <Text className="text-sm font-rubik-medium">Name</Text>
+      <TextInput
+        placeholder="Enter your name"
+        value={formData.name}
+        onChangeText={(text) =>
+          setFormData((prev) => ({ ...prev, name: text }))
+        }
+        className="border-b border-gray-300 p-3 mb-4 rounded-md"
+      />
+
+      {/* Phone Number Input */}
+      <Text className="text-sm font-rubik-medium">Phone Number</Text>
+      <TextInput
+        placeholder="Enter your phone number"
+        value={formData.phoneNumber}
+        onChangeText={(text) =>
+          setFormData((prev) => ({ ...prev, phoneNumber: text }))
+        }
+        keyboardType="phone-pad"
+        className="border-b border-gray-300 p-3 mb-4 rounded-md"
+      />
+
+      {/* Location Input */}
+      <Text className="text-sm font-rubik-medium">Location</Text>
+      <TextInput
+        placeholder="Enter your location"
+        value={formData.location}
+        onChangeText={(text) =>
+          setFormData((prev) => ({ ...prev, location: text }))
+        }
+        className="border-b border-gray-300 p-3 mb-4 rounded-md"
+      />
+
+      <TouchableOpacity
+        onPress={handleFormSubmit}
+        className="bg-primary-300 py-3 rounded-full mt-5"
       >
-        <View className="flex z-10 justify-center items-center absolute top-0 left-0 right-0 bottom-0 bg-black ">
-          <View className="bg-white p-8 rounded-xl w-80 shadow-lg">
-            <Text className="text-2xl font-rubik-bold text-center text-gray-700 mb-4">
-              Enter Your Details
-            </Text>
+        {isLoading ? (
+          <ActivityIndicator color="white" />
+        ) : (
+          <Text className="text-white text-lg text-center font-rubik-bold">
+            Submit
+          </Text>
+        )}
+      </TouchableOpacity>
+    </View>
+  </View>
+</Modal>
 
-            {/* Name Input */}
-            <Text className="text-sm font-rubik-medium">Name</Text>
-            <TextInput
-              placeholder="Enter your name"
-              value={formData.name}
-              onChangeText={(text) =>
-                setFormData((prev) => ({ ...prev, name: text }))
-              }
-              className="border-b border-gray-300 p-3 mb-4 rounded-md"
-            />
-
-            {/* Phone Number Input */}
-            <Text className="text-sm font-rubik-medium">Phone Number</Text>
-            <TextInput
-              placeholder="Enter your phone number"
-              value={formData.phoneNumber}
-              onChangeText={(text) =>
-                setFormData((prev) => ({ ...prev, phoneNumber: text }))
-              }
-              keyboardType="phone-pad"
-              className="border-b border-gray-300 p-3 mb-4 rounded-md"
-            />
-
-            {/* Location Input */}
-            <Text className="text-sm font-rubik-medium">Location</Text>
-            <TextInput
-              placeholder="Enter your location"
-              value={formData.location}
-              onChangeText={(text) =>
-                setFormData((prev) => ({ ...prev, location: text }))
-              }
-              className="border-b border-gray-300 p-3 mb-4 rounded-md"
-            />
-
-            <TouchableOpacity
-              onPress={handleFormSubmit}
-              className="bg-primary-300 py-3 rounded-full mt-5"
-            >
-              {isLoading ? (
-                <ActivityIndicator color="white" />
-              ) : (
-                <Text className="text-white text-lg text-center font-rubik-bold">
-                  Submit
-                </Text>
-              )}
-            </TouchableOpacity>
-          </View>
-        </View>
-      </Modal>
-
-      {/* Confirmation Modal */}
-      <Modal
-        transparent={true}
-        visible={modalVisible}
-        animationType="fade"
-        onRequestClose={() => setModalVisible(false)}
+{/* Confirmation Modal */}
+<Modal
+  transparent={true}
+  visible={modalVisible}
+  animationType="fade"
+  onRequestClose={() => setModalVisible(false)}
+>
+  <View className="flex justify-center items-center absolute top-0 left-0 right-0 bottom-0  bg-[rgba(0,0,0,0.5)] bg-opacity-50">
+    <View className="bg-white p-8 rounded-xl w-80 shadow-lg">
+      <Text className="text-xl font-rubik-bold text-center text-gray-700 mb-4">
+        Thank you for viewing the property. We appreciate your interest
+        and are happy to confirm it's still available. A team member
+        will contact you shortly for any further queries.
+      </Text>
+      <TouchableOpacity
+        onPress={() => setModalVisible(false)}
+        className="bg-primary-300 py-3 rounded-full"
       >
-        <View className="flex justify-center items-center absolute top-0 left-0 right-0 bottom-0">
-          <View className="bg-white p-8 rounded-xl w-80 shadow-lg">
-            <Text className="text-xl font-rubik-bold text-center text-gray-700 mb-4">
-              Booking Successful!
-            </Text>
-            <TouchableOpacity
-              onPress={() => setModalVisible(false)}
-              className="bg-primary-300 py-3 rounded-full"
-            >
-              <Text className="text-white text-lg text-center font-rubik-bold">
-                OK
-              </Text>
-            </TouchableOpacity>
-          </View>
-        </View>
-      </Modal>
+        <Text className="text-white text-lg text-center font-rubik-bold">
+          OK
+        </Text>
+      </TouchableOpacity>
+    </View>
+  </View>
+</Modal>
+
     </View>
   );
 };

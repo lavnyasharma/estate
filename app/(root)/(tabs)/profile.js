@@ -87,13 +87,16 @@ const Profile = () => {
         </View>
 
         <View className="flex flex-col border-t mt-5 pt-5 border-primary-200">
-          <SettingsItem
-            icon={icons.logout}
-            title="Logout"
-            textStyle="text-danger"
-            showArrow={false}
-            onPress={handleLogout}
-          />
+        <TouchableOpacity
+  onPress={handleLogout}
+  className="flex flex-row items-center justify-between py-3"
+>
+  <View className="flex flex-row items-center gap-3">
+    <Image source={icons.logout} className="size-6" />
+    <Text className="text-lg font-rubik-medium text-danger">Logout</Text>
+  </View>
+</TouchableOpacity>
+
         </View>
       </ScrollView>
     </SafeAreaView>
