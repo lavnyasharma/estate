@@ -43,7 +43,7 @@ const Profile = () => {
   const { user, refetch } = useGlobalContext();
 
   const handleLogout = async () => {
-    alert(1)
+   console.log('error')
     const result = await logout();
     if (result) {
       Alert.alert("Success", "Logged out successfully");
