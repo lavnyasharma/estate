@@ -85,9 +85,11 @@ export const settings = [
     icon: icons.bell,
   },
   {
-    title: "Security",
-    icon: icons.shield,
+    title: "Listed Properties",
+    icon: icons.Terms,
+    onPress: `/listed/page`,
   },
+
   {
     title: "Language",
     icon: icons.language,
@@ -97,8 +99,9 @@ export const settings = [
     icon: icons.info,
   },
   {
-    title: "Invite Friends",
-    icon: icons.people,
+    title: "Terms & Condition",
+    icon: icons.Terms,
+    onPress: `/termsandcondition/ts`,
   },
 ];
 

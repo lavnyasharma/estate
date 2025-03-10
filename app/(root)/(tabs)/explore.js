@@ -76,7 +76,7 @@ const Explore = () => {
               <Text className="text-base mr-2 text-center font-rubik-medium text-black-300">
                 Search for Your Ideal Home
               </Text>
-              <Image source={icons.bell} className="w-6 h-6" />
+              <Image source={icons.menu} className="w-6 h-6" />
             </View>
 
             <Search />

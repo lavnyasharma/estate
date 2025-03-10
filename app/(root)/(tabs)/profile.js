@@ -13,6 +13,7 @@ import { useGlobalContext } from "@/lib/global-provider";
 
 import icons from "@/constants/icons";
 import { settings } from "@/constants/data";
+import { router } from "expo-router";
 
 const SettingsItem = ({
   icon,
@@ -22,7 +23,9 @@ const SettingsItem = ({
   showArrow = true,
 }) => (
   <TouchableOpacity
-    onPress={onPress}
+    onPress={() => {
+      router.push(onPress);
+    }}
     className="flex flex-row items-center justify-between py-3"
   >
     <View className="flex flex-row items-center gap-3">
@@ -40,6 +43,7 @@ const Profile = () => {
   const { user, refetch } = useGlobalContext();
 
   const handleLogout = async () => {
+    alert(1)
     const result = await logout();
     if (result) {
       Alert.alert("Success", "Logged out successfully");
@@ -57,7 +61,7 @@ const Profile = () => {
       >
         <View className="flex flex-row items-center justify-between mt-5">
           <Text className="text-xl font-rubik-bold">Profile</Text>
-          <Image source={icons.bell} className="size-5" />
+        
         </View>
 
         <View className="flex flex-row justify-center mt-5">
@@ -74,10 +78,7 @@ const Profile = () => {
           </View>
         </View>
 
-        <View className="flex flex-col mt-10">
-          <SettingsItem icon={icons.calendar} title="My Bookings" />
-          <SettingsItem icon={icons.wallet} title="Payments" />
-        </View>
+      
 
         <View className="flex flex-col mt-5 border-t pt-5 border-primary-200">
           {settings.slice(2).map((item, index) => (

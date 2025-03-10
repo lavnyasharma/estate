@@ -14,5 +14,5 @@
     ".expo/types/**/*.ts",
     "expo-env.d.ts",
     "nativewind-env.d.ts"
-, "app/(root)/(tabs)/_layout.js", "app/(root)/(tabs)/explore.js", "app/(root)/(tabs)/index.js", "app/(root)/(tabs)/profile.js", "app/(root)/properties/[id].js", "app/(root)/_layout.js", "app/_layout.js", "app/sign-in.js", "components/Cards.js", "components/Comment.js", "components/Filters.js", "components/NoResults.js", "components/Search.js", "constants/icons.js"  ]
+, "app/(root)/(tabs)/_layout.js", "app/(root)/(tabs)/explore.js", "app/(root)/(tabs)/index.js", "app/(root)/(tabs)/profile.js", "app/(root)/properties/[id].js","app/(root)/termsandcondition/ts.js", "app/(root)/_layout.js", "app/_layout.js", "app/sign-in.js", "components/Cards.js", "components/Comment.js", "components/Filters.js", "components/NoResults.js", "components/Search.js", "constants/icons.js"  ]
 }
